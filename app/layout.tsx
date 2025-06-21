@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import DynamicBackground from './DynamicBackground'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,7 +20,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head />
-      <body className={`${inter.className} antialiased bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-100`}>
+      <body className={`${inter.className} antialiased`}>
+        <DynamicBackground />
         {children}
       </body>
     </html>

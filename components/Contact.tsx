@@ -36,19 +36,19 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'aditya.rao@email.com',
-      href: 'mailto:aditya.rao@email.com'
+      value: 'adityasr2018@gmail.com',
+      href: 'mailto:adityasr2018@gmail.com'
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567'
+      value: '+1 (408) 823-7424',
+      href: 'tel:+4088237424'
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Cupertino, CA',
       href: '#'
     }
   ]
@@ -57,7 +57,7 @@ const Contact = () => {
     {
       name: 'LinkedIn',
       icon: Linkedin,
-      href: 'https://linkedin.com/in/-adityarao',
+      href: 'https://linkedin.com/in/-aditya-rao',
       color: 'text-blue-600 hover:text-blue-500'
     },
     {
@@ -69,7 +69,7 @@ const Contact = () => {
     {
       name: 'Twitter',
       icon: Twitter,
-      href: 'https://twitter.com/adityarao',
+      href: 'https://twitter.com/@RealAdiRao',
       color: 'text-blue-400 hover:text-blue-300'
     },
     {
@@ -87,13 +87,13 @@ const Contact = () => {
     {
       name: 'Website',
       icon: Globe,
-      href: 'https://adityarao.dev',
+      href: 'https://aditya-rao.vercel.app/',
       color: 'text-green-500 hover:text-green-400'
     }
   ]
 
   return (
-    <section id="contact" className="section-padding bg-[#0a0f1c]">
+    <section id="contact" className="section-padding">
       <div className="container-max">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -103,10 +103,10 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-white mb-4">
-            Get In <span className="gradient-text">Touch</span>
+            Let's Get In <span className="gradient-text">Contact</span>
           </h2>
           <p className="text-xl text-slate-200 max-w-3xl mx-auto">
-            I'm always open to new opportunities, collaborations, or just a friendly conversation. 
+            I'm always open to new opportunities, collaborations, or just a friendly conversation about technology and development. 
             Feel free to reach out!
           </p>
         </motion.div>
@@ -233,7 +233,7 @@ const Contact = () => {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-white mb-4">Follow Me</h3>
+              <h3 className="text-xl font-semibold text-white mb-4">Reach Out To Me</h3>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
                   <motion.a

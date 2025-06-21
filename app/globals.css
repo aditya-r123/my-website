@@ -11,13 +11,42 @@
   
   body {
     font-family: 'Inter', system-ui, sans-serif;
-    background-color: #0a0f1c; /* Dark blue background */
+    background: linear-gradient(135deg, #0a0f1c 0%, #1a1f2c 100%);
     color: #e2e8f0;
+    transition: all 0.5s ease;
+    min-height: 100vh;
+  }
+
+  /* Dynamic background based on scroll position */
+  body.scroll-top {
+    background: linear-gradient(135deg, #0a0f1c 0%, #1a1f2c 50%, #0f1420 100%);
+  }
+
+  body.scroll-middle {
+    background: linear-gradient(135deg, #0a0f1c 0%, #1e1f2e 30%, #2a1f3e 70%, #0a0f1c 100%);
+  }
+
+  body.scroll-bottom {
+    background: linear-gradient(135deg, #0a0f1c 0%, #1a1f2c 50%, #0f1420 100%);
   }
 
   /* Ensure all sections have consistent backgrounds */
   section {
-    background-color: #0a0f1c; /* Dark blue */
+    background-color: transparent;
+    position: relative;
+  }
+
+  /* Add subtle overlay to sections for better text readability */
+  section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 15, 28, 0.2);
+    pointer-events: none;
+    z-index: -1;
   }
 }
 
@@ -65,7 +94,7 @@
   }
 
   .section-padding {
-    @apply py-20 sm:py-24 lg:py-32;
+    @apply py-12 sm:py-16 lg:py-20;
   }
 
   /* Improved text contrast for better readability */
@@ -182,6 +211,30 @@
 
   .depth-layer:hover::after {
     @apply opacity-100;
+  }
+
+  /* Custom scrollbar for experience cards */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #475569 #1e293b;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #1e293b;
+    border-radius: 3px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 3px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
   }
 }
 

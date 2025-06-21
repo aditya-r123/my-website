@@ -6,11 +6,11 @@ import { User } from 'lucide-react'
 
 const About = () => {
   const skills = [
-    'JavaScript', 'TypeScript', 'React', 'Node.js', 'Python', 'AWS'
+    'JavaScript', 'TypeScript', 'React', 'Next.js', 'Node.js', 'Python', 'AWS', 'Docker', 'MongoDB', 'PostgreSQL', 'Git'
   ]
 
   return (
-    <section id="about" className="section-padding bg-[#0a0f1c]">
+    <section id="about" className="section-padding">
       <div className="container-max">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -23,7 +23,7 @@ const About = () => {
             About <span className="gradient-text">Me</span>
           </h2>
           <p className="text-xl text-slate-200 max-w-3xl mx-auto">
-            A passionate <span className="gradient-text-purple">technologist</span> with a drive for <span className="gradient-text-green">innovation</span> and a commitment to excellence in everything I do.
+            A passionate <span className="gradient-text-purple">software engineer</span> with a drive for <span className="gradient-text-green">innovation</span> and a commitment to building impactful solutions.
           </p>
         </motion.div>
 
@@ -39,10 +39,10 @@ const About = () => {
               <h3 className="text-2xl font-semibold text-white mb-4">Bio</h3>
               <div className="space-y-4 text-slate-200 leading-relaxed">
                 <p>
-                  I'm a results-driven professional with over 5 years of experience in <span className="gradient-text-cyan">software development</span>, specializing in full-stack web applications and <span className="gradient-text-orange">cloud technologies</span>. My passion lies in creating innovative solutions that solve real-world problems.
+                  I'm a <span className="gradient-text-cyan">software engineer</span> with a passion for creating innovative web applications and solving complex technical challenges. With experience in both frontend and backend development, I specialize in building scalable, user-friendly applications that make a real impact.
                 </p>
                 <p>
-                  Throughout my career, I've worked with diverse teams and technologies, always striving to learn and grow. I believe in the power of <span className="gradient-text-purple">collaboration</span> and continuous improvement, and I'm always excited to take on new challenges.
+                  My journey in technology has been driven by curiosity and a desire to continuously learn and grow. I enjoy working with modern technologies and frameworks, and I'm always excited to explore new tools and methodologies that can improve the development process and user experience.
                 </p>
               </div>
             </div>

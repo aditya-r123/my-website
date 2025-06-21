@@ -7,23 +7,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-slate-900 dark:bg-slate-950 text-white">
+    <footer className="text-white relative">
       <div className="container-max py-12">
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Brand */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl font-bold gradient-text mb-4">Aditya Rao</h3>
-            <p className="text-slate-300 dark:text-slate-400 mb-4 leading-relaxed">
-              A passionate <span className="gradient-text-purple">software engineer</span> dedicated to creating <span className="gradient-text-green">innovative solutions</span> 
-              and building meaningful applications that make a difference.
-            </p>
-          </motion.div>
-
+        <div className="grid md:grid-cols-2 gap-8">
           {/* Quick Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -37,7 +23,7 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={`#${item.toLowerCase()}`}
-                    className="text-slate-300 dark:text-slate-400 hover:text-white dark:hover:text-slate-200 transition-colors duration-200"
+                    className="text-slate-300 hover:text-white transition-colors duration-200"
                   >
                     {item}
                   </a>
@@ -54,10 +40,10 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
-            <div className="space-y-2 text-slate-300 dark:text-slate-400">
-              <p>San Francisco, CA</p>
-              <p>aditya.rao@email.com</p>
-              <p>+1 (555) 123-4567</p>
+            <div className="space-y-2 text-slate-300">
+              <p>Cupertino, CA</p>
+              <p>adityasr2018@gmail.com</p>
+              <p>+1 (408) 823-7424</p>
             </div>
           </motion.div>
         </div>
@@ -68,9 +54,9 @@ const Footer = () => {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.8 }}
           viewport={{ once: true }}
-          className="border-t border-slate-800 dark:border-slate-700 mt-8 pt-8 text-center"
+          className="border-t border-slate-700 mt-8 pt-8 text-center"
         >
-          <p className="text-slate-400 dark:text-slate-500">
+          <p className="text-slate-400">
             © {currentYear} Aditya Rao. All rights reserved.
           </p>
         </motion.div>

@@ -48,9 +48,14 @@ const Header = () => {
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold gradient-text"
+            className="flex items-center space-x-2"
           >
-            Dev
+            <div className="relative">
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center shadow-lg">
+                <span className="text-white font-bold text-lg tracking-wider">AR</span>
+              </div>
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full opacity-80"></div>
+            </div>
           </motion.div>
 
           {/* Desktop Navigation */}

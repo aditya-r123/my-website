@@ -7,63 +7,63 @@ import { ExternalLink, Github, Star, GitBranch, Eye } from 'lucide-react'
 const Projects = () => {
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce platform built with modern technologies, featuring user authentication, payment processing, and admin dashboard.',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe', 'AWS'],
-      github: 'https://github.com/adityarao/ecommerce',
-      live: 'https://ecommerce-demo.com',
-      stats: { stars: 245, forks: 89, views: 1200 }
+      title: 'Personal Portfolio',
+      description: 'A modern, responsive portfolio website built with Next.js and TypeScript, featuring smooth animations and a clean design.',
+      image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=250&fit=crop',
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+      github: 'https://github.com/aditya-r123/personal-portfolio',
+      live: 'https://adityarao.dev',
+      stats: { stars: 45, forks: 12, views: 320 }
     },
     {
       title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, team collaboration, and progress tracking features.',
+      description: 'A collaborative task management application with real-time updates, user authentication, and progress tracking.',
       image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=400&h=250&fit=crop',
-      technologies: ['TypeScript', 'Next.js', 'PostgreSQL', 'Socket.io', 'Redis'],
-      github: 'https://github.com/adityarao/taskmanager',
-      live: 'https://taskmanager-demo.com',
-      stats: { stars: 189, forks: 67, views: 890 }
-    },
-    {
-      title: 'AI Chat Assistant',
-      description: 'An intelligent chatbot powered by machine learning, capable of understanding context and providing helpful responses.',
-      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=250&fit=crop',
-      technologies: ['Python', 'TensorFlow', 'React', 'FastAPI', 'Docker'],
-      github: 'https://github.com/adityarao/ai-chat',
-      live: 'https://ai-chat-demo.com',
-      stats: { stars: 312, forks: 124, views: 2100 }
-    },
-    {
-      title: 'Portfolio Website',
-      description: 'A modern, responsive portfolio website showcasing projects, skills, and professional experience with smooth animations.',
-      image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=250&fit=crop',
-      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-      github: 'https://github.com/adityarao/portfolio',
-      live: 'https://adityarao.dev',
-      stats: { stars: 156, forks: 45, views: 750 }
+      technologies: ['React', 'Node.js', 'MongoDB', 'Socket.io', 'JWT'],
+      github: 'https://github.com/aditya-r123/task-manager',
+      live: 'https://task-manager-demo.vercel.app',
+      stats: { stars: 28, forks: 8, views: 180 }
     },
     {
       title: 'Weather Dashboard',
       description: 'A beautiful weather application with real-time data, forecasts, and interactive maps for multiple locations.',
       image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=400&h=250&fit=crop',
-      technologies: ['React', 'OpenWeather API', 'Chart.js', 'Leaflet', 'PWA'],
-      github: 'https://github.com/adityarao/weather-app',
-      live: 'https://weather-demo.com',
-      stats: { stars: 98, forks: 34, views: 520 }
+      technologies: ['React', 'OpenWeather API', 'Chart.js', 'Leaflet'],
+      github: 'https://github.com/aditya-r123/weather-app',
+      live: 'https://weather-dashboard.vercel.app',
+      stats: { stars: 32, forks: 15, views: 210 }
     },
     {
-      title: 'Social Media Analytics',
-      description: 'A comprehensive analytics platform for social media management with data visualization and reporting tools.',
+      title: 'E-Commerce Platform',
+      description: 'A full-stack e-commerce platform with user authentication, product management, and payment integration.',
+      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop',
+      technologies: ['Next.js', 'MongoDB', 'Stripe', 'Tailwind CSS'],
+      github: 'https://github.com/aditya-r123/ecommerce',
+      live: 'https://ecommerce-demo.vercel.app',
+      stats: { stars: 67, forks: 23, views: 450 }
+    },
+    {
+      title: 'Blog Platform',
+      description: 'A modern blog platform with markdown support, user authentication, and responsive design.',
+      image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=250&fit=crop',
+      technologies: ['Next.js', 'MongoDB', 'Markdown', 'Tailwind CSS'],
+      github: 'https://github.com/aditya-r123/blog-platform',
+      live: 'https://blog-platform.vercel.app',
+      stats: { stars: 41, forks: 18, views: 280 }
+    },
+    {
+      title: 'Social Media Dashboard',
+      description: 'A dashboard for managing social media accounts with analytics and content scheduling features.',
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop',
-      technologies: ['Vue.js', 'Node.js', 'MongoDB', 'D3.js', 'AWS'],
-      github: 'https://github.com/adityarao/social-analytics',
-      live: 'https://analytics-demo.com',
-      stats: { stars: 203, forks: 78, views: 1100 }
+      technologies: ['React', 'Node.js', 'MongoDB', 'Chart.js', 'AWS'],
+      github: 'https://github.com/aditya-r123/social-dashboard',
+      live: 'https://social-dashboard.vercel.app',
+      stats: { stars: 53, forks: 19, views: 340 }
     }
   ]
 
   return (
-    <section id="projects" className="section-padding bg-[#0a0f1c]">
+    <section id="projects" className="section-padding">
       <div className="container-max">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -188,7 +188,7 @@ const Projects = () => {
           className="text-center mt-16"
         >
           <motion.a
-            href="https://github.com/adityarao"
+            href="https://github.com/aditya-r123"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.02 }}
