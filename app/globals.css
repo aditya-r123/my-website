@@ -20,7 +20,7 @@
   }
   
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+    @apply transition-all duration-200 hover:shadow-xl hover:-translate-y-1;
   }
   
   .section-padding {
@@ -38,14 +38,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  @apply bg-gray-100;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  @apply bg-gray-300;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  @apply bg-gray-400;
 } 

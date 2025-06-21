@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { ChevronDown, Download, Mail } from 'lucide-react'
+import { ChevronDown, Download, ArrowRight, Github, Linkedin, Mail, Zap, Settings } from 'lucide-react'
 
 const Hero = () => {
   const scrollToAbout = () => {
@@ -12,13 +12,20 @@ const Hero = () => {
     }
   }
 
+  const downloadResume = () => {
+    const link = document.createElement('a')
+    link.href = '/resume.pdf'
+    link.download = 'Aditya_Rao_Resume.pdf'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 to-white">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-primary-400 rounded-full mix-blend-multiply filter blur-xl animate-bounce-slow"></div>
-        <div className="absolute top-40 right-20 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl animate-bounce-slow animation-delay-2000"></div>
-        <div className="absolute -bottom-8 left-40 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl animate-bounce-slow animation-delay-4000"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-400 to-purple-400 transform rotate-12 scale-150"></div>
       </div>
 
       <div className="container-max relative z-10">
@@ -30,48 +37,98 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="text-center lg:text-left"
           >
-            <motion.h1
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
+              className="mb-6"
+            >
+              <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-4">
+                Software Engineer & Developer
+              </span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
             >
               Hi, I'm{' '}
               <span className="gradient-text">Aditya Rao</span>
             </motion.h1>
-            
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-xl sm:text-2xl text-gray-600 mb-8 leading-relaxed"
+              transition={{ delay: 0.6, duration: 0.8 }}
+              className="text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0"
             >
-              Passionate about technology, innovation, and creating meaningful solutions that make a difference.
+              Passionate about creating innovative solutions and building scalable applications. 
+              I love turning complex problems into simple, beautiful, and intuitive designs.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={downloadResume}
                 className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center gap-2"
-              >
-                <Mail size={20} />
-                Get In Touch
-              </motion.button>
-              
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center gap-2"
               >
                 <Download size={20} />
                 Download Resume
               </motion.button>
+              
+              <motion.a
+                href="#projects"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center gap-2"
+              >
+                View Projects
+                <ArrowRight size={20} />
+              </motion.a>
+            </motion.div>
+
+            {/* Social Links */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1, duration: 0.8 }}
+              className="flex justify-center lg:justify-start gap-4 mt-8"
+            >
+              <motion.a
+                href="https://github.com/adityarao"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1, y: -2 }}
+                className="p-3 bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-600 rounded-lg transition-all duration-200"
+              >
+                <Github size={20} />
+              </motion.a>
+              
+              <motion.a
+                href="https://linkedin.com/in/adityarao"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1, y: -2 }}
+                className="p-3 bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-600 rounded-lg transition-all duration-200"
+              >
+                <Linkedin size={20} />
+              </motion.a>
+              
+              <motion.a
+                href="mailto:aditya@example.com"
+                whileHover={{ scale: 1.1, y: -2 }}
+                className="p-3 bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-600 rounded-lg transition-all duration-200"
+              >
+                <Mail size={20} />
+              </motion.a>
             </motion.div>
           </motion.div>
 
@@ -85,8 +142,12 @@ const Hero = () => {
             <div className="relative">
               <div className="w-80 h-80 rounded-full bg-gradient-to-br from-primary-400 to-purple-500 p-1">
                 <div className="w-full h-full rounded-full bg-white p-2">
-                  <div className="w-full h-full rounded-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-                    <span className="text-6xl font-bold text-gray-400">AR</span>
+                  <div className="w-full h-full rounded-full overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" 
+                      alt="Aditya Rao" 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
               </div>
@@ -97,7 +158,7 @@ const Hero = () => {
                 transition={{ duration: 3, repeat: Infinity }}
                 className="absolute -top-4 -right-4 w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg"
               >
-                <span className="text-white font-bold">🚀</span>
+                <Zap size={24} className="text-white" />
               </motion.div>
               
               <motion.div
@@ -105,7 +166,7 @@ const Hero = () => {
                 transition={{ duration: 3, repeat: Infinity, delay: 1 }}
                 className="absolute -bottom-4 -left-4 w-16 h-16 bg-green-400 rounded-full flex items-center justify-center shadow-lg"
               >
-                <span className="text-white font-bold">💻</span>
+                <Settings size={24} className="text-white" />
               </motion.div>
             </div>
           </motion.div>

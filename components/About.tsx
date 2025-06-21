@@ -2,25 +2,62 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { User, MapPin, Calendar, Mail, Phone, Globe } from 'lucide-react'
+import { Code, Database, Smartphone, Cloud, Shield, Zap } from 'lucide-react'
 
 const About = () => {
   const skills = [
-    'JavaScript', 'TypeScript', 'React', 'Node.js', 'Python', 'Java',
-    'AWS', 'Docker', 'Kubernetes', 'MongoDB', 'PostgreSQL', 'Git',
-    'Machine Learning', 'Data Analysis', 'Agile', 'Leadership'
-  ]
-
-  const personalInfo = [
-    { icon: MapPin, label: 'Location', value: 'San Francisco, CA' },
-    { icon: Calendar, label: 'Experience', value: '5+ Years' },
-    { icon: Mail, label: 'Email', value: 'aditya.rao@email.com' },
-    { icon: Phone, label: 'Phone', value: '+1 (555) 123-4567' },
-    { icon: Globe, label: 'Website', value: 'adityarao.dev' },
+    {
+      category: 'Frontend Development',
+      icon: Code,
+      color: 'from-blue-500 to-cyan-500',
+      bgColor: 'bg-blue-100',
+      textColor: 'text-blue-700',
+      technologies: ['React', 'Vue.js', 'TypeScript', 'Tailwind CSS', 'Next.js']
+    },
+    {
+      category: 'Backend Development',
+      icon: Database,
+      color: 'from-green-500 to-emerald-500',
+      bgColor: 'bg-green-100',
+      textColor: 'text-green-700',
+      technologies: ['Node.js', 'Python', 'Express.js', 'FastAPI', 'PostgreSQL']
+    },
+    {
+      category: 'Mobile Development',
+      icon: Smartphone,
+      color: 'from-purple-500 to-pink-500',
+      bgColor: 'bg-purple-100',
+      textColor: 'text-purple-700',
+      technologies: ['React Native', 'Flutter', 'iOS', 'Android', 'PWA']
+    },
+    {
+      category: 'Cloud & DevOps',
+      icon: Cloud,
+      color: 'from-orange-500 to-red-500',
+      bgColor: 'bg-orange-100',
+      textColor: 'text-orange-700',
+      technologies: ['AWS', 'Docker', 'Kubernetes', 'CI/CD', 'Terraform']
+    },
+    {
+      category: 'Security',
+      icon: Shield,
+      color: 'from-red-500 to-pink-500',
+      bgColor: 'bg-red-100',
+      textColor: 'text-red-700',
+      technologies: ['OAuth', 'JWT', 'HTTPS', 'Security Best Practices', 'Penetration Testing']
+    },
+    {
+      category: 'Performance',
+      icon: Zap,
+      color: 'from-yellow-500 to-orange-500',
+      bgColor: 'bg-yellow-100',
+      textColor: 'text-yellow-700',
+      technologies: ['Caching', 'CDN', 'Optimization', 'Monitoring', 'Analytics']
+    }
   ]
 
   return (
-    <section id="about" className="section-padding bg-white">
+    <section id="about" className="section-padding bg-gray-50">
       <div className="container-max">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -33,108 +70,122 @@ const About = () => {
             About <span className="gradient-text">Me</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A passionate technologist with a drive for innovation and a commitment to excellence in everything I do.
+            A passionate software engineer with expertise in full-stack development and modern technologies.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Profile Image */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="flex justify-center lg:justify-start"
           >
-            <div className="relative">
-              <div className="w-96 h-96 rounded-2xl bg-gradient-to-br from-primary-400 to-purple-500 p-1">
-                <div className="w-full h-full rounded-2xl bg-white p-2">
-                  <div className="w-full h-full rounded-2xl bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-                    <div className="text-center">
-                      <User size={120} className="text-gray-400 mx-auto mb-4" />
-                      <p className="text-gray-500 text-lg">Professional Photo</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              Turning Ideas Into Reality
+            </h3>
+            
+            <div className="space-y-4 text-gray-600">
+              <p>
+                I'm a software engineer with over 5 years of experience building scalable web applications 
+                and innovative solutions. My passion lies in creating user-friendly applications that solve 
+                real-world problems.
+              </p>
               
-              {/* Decorative Elements */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-yellow-400 rounded-full"></div>
-              <div className="absolute -bottom-4 -left-4 w-8 h-8 bg-green-400 rounded-full"></div>
+              <p>
+                I specialize in modern web technologies including React, Node.js, and cloud platforms. 
+                I believe in writing clean, maintainable code and staying up-to-date with the latest 
+                industry trends and best practices.
+              </p>
+              
+              <p>
+                When I'm not coding, you can find me exploring new technologies, contributing to open-source 
+                projects, or sharing knowledge with the developer community. I'm always eager to learn 
+                new skills and take on challenging projects.
+              </p>
+            </div>
+
+            {/* Key Stats */}
+            <div className="grid grid-cols-3 gap-6 mt-8">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-primary-600 mb-1">5+</div>
+                <div className="text-sm text-gray-600">Years Experience</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-primary-600 mb-1">50+</div>
+                <div className="text-sm text-gray-600">Projects Completed</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-primary-600 mb-1">15+</div>
+                <div className="text-sm text-gray-600">Technologies</div>
+              </div>
             </div>
           </motion.div>
 
-          {/* Content */}
+          {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="relative"
           >
-            {/* Personal Info */}
-            <div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-6">Personal Information</h3>
-              <div className="grid sm:grid-cols-2 gap-4">
-                {personalInfo.map((info, index) => (
-                  <motion.div
-                    key={info.label}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1, duration: 0.5 }}
-                    viewport={{ once: true }}
-                    className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg"
-                  >
-                    <info.icon size={20} className="text-primary-600" />
-                    <div>
-                      <p className="text-sm text-gray-500 font-medium">{info.label}</p>
-                      <p className="text-gray-900 font-semibold">{info.value}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-
-            {/* Bio */}
-            <div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Bio</h3>
-              <div className="space-y-4 text-gray-600 leading-relaxed">
-                <p>
-                  I'm a results-driven professional with over 5 years of experience in software development, 
-                  specializing in full-stack web applications and cloud technologies. My passion lies in 
-                  creating innovative solutions that solve real-world problems.
-                </p>
-                <p>
-                  Throughout my career, I've worked with diverse teams and technologies, always striving 
-                  to learn and grow. I believe in the power of collaboration and continuous improvement, 
-                  and I'm always excited to take on new challenges.
-                </p>
-                <p>
-                  When I'm not coding, you can find me exploring new technologies, contributing to open-source 
-                  projects, or sharing knowledge with the developer community.
-                </p>
-              </div>
-            </div>
-
-            {/* Skills */}
-            <div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Skills & Technologies</h3>
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill, index) => (
-                  <motion.span
-                    key={skill}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: index * 0.05, duration: 0.3 }}
-                    viewport={{ once: true }}
-                    className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium hover:bg-primary-200 transition-colors duration-200"
-                  >
-                    {skill}
-                  </motion.span>
-                ))}
+            <div className="relative w-full max-w-md mx-auto">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-400 to-purple-400 rounded-2xl transform rotate-6 scale-105 opacity-20"></div>
+              <div className="relative bg-white rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop" 
+                  alt="Working on code"
+                  className="w-full h-auto object-cover"
+                />
               </div>
             </div>
           </motion.div>
+        </div>
+
+        {/* Skills Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {skills.map((skill, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1, duration: 0.8 }}
+              viewport={{ once: true }}
+              className="group"
+            >
+              <motion.div
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 h-full"
+              >
+                {/* Icon */}
+                <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${skill.color} flex items-center justify-center mb-4`}>
+                  <skill.icon size={24} className="text-white" />
+                </div>
+
+                {/* Title */}
+                <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors duration-200">
+                  {skill.category}
+                </h3>
+
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2">
+                  {skill.technologies.map((tech, idx) => (
+                    <span
+                      key={idx}
+                      className={`px-2 py-1 ${skill.bgColor} ${skill.textColor} rounded-md text-xs font-medium`}
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Decorative Element */}
+                <div className={`w-8 h-1 rounded-full bg-gradient-to-r ${skill.color} mt-4 group-hover:w-12 transition-all duration-300`}></div>
+              </motion.div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

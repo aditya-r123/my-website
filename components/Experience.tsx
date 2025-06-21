@@ -2,9 +2,18 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Briefcase, Calendar, MapPin, ExternalLink } from 'lucide-react'
+import { Briefcase, Calendar, MapPin } from 'lucide-react'
 
 const Experience = () => {
+  const downloadResume = () => {
+    const link = document.createElement('a')
+    link.href = '/resume.pdf'
+    link.download = 'Aditya_Rao_Resume.pdf'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   const experiences = [
     {
       title: 'Senior Software Engineer',
@@ -94,33 +103,24 @@ const Experience = () => {
                     className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300"
                   >
                     {/* Header */}
-                    <div className="flex items-start justify-between mb-4">
-                      <div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-1">
-                          {experience.title}
-                        </h3>
-                        <div className="flex items-center space-x-4 text-sm text-gray-600 mb-2">
-                          <div className="flex items-center space-x-1">
-                            <Briefcase size={16} />
-                            <span>{experience.company}</span>
-                          </div>
-                          <div className="flex items-center space-x-1">
-                            <MapPin size={16} />
-                            <span>{experience.location}</span>
-                          </div>
+                    <div className="mb-4">
+                      <h3 className="text-xl font-bold text-gray-900 mb-1">
+                        {experience.title}
+                      </h3>
+                      <div className="flex items-center space-x-4 text-sm text-gray-600 mb-2">
+                        <div className="flex items-center space-x-1">
+                          <Briefcase size={16} />
+                          <span>{experience.company}</span>
                         </div>
-                        <div className="flex items-center space-x-1 text-sm text-primary-600 font-medium">
-                          <Calendar size={16} />
-                          <span>{experience.period}</span>
+                        <div className="flex items-center space-x-1">
+                          <MapPin size={16} />
+                          <span>{experience.location}</span>
                         </div>
                       </div>
-                      <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        className="p-2 text-gray-400 hover:text-primary-600 transition-colors duration-200"
-                      >
-                        <ExternalLink size={20} />
-                      </motion.button>
+                      <div className="flex items-center space-x-1 text-sm text-primary-600 font-medium">
+                        <Calendar size={16} />
+                        <span>{experience.period}</span>
+                      </div>
                     </div>
 
                     {/* Description */}
@@ -173,6 +173,7 @@ const Experience = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={downloadResume}
             className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200"
           >
             Download Full Resume

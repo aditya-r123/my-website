@@ -2,69 +2,57 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { ExternalLink, Github, Code, Users, Star } from 'lucide-react'
+import { Github } from 'lucide-react'
 
 const Projects = () => {
   const projects = [
     {
       title: 'E-Commerce Platform',
       description: 'A full-stack e-commerce platform with real-time inventory management, payment processing, and admin dashboard.',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop',
       technologies: ['React', 'Node.js', 'MongoDB', 'Stripe', 'AWS'],
       github: 'https://github.com/adityarao/ecommerce',
-      live: 'https://ecommerce-demo.com',
-      features: ['Real-time inventory', 'Payment processing', 'Admin dashboard', 'Mobile responsive'],
-      stats: { stars: 45, forks: 12 }
+      features: ['Real-time inventory', 'Payment processing', 'Admin dashboard', 'Mobile responsive']
     },
     {
       title: 'AI Chat Assistant',
       description: 'An intelligent chatbot powered by machine learning that provides customer support and answers queries.',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=250&fit=crop',
       technologies: ['Python', 'TensorFlow', 'React', 'FastAPI', 'PostgreSQL'],
       github: 'https://github.com/adityarao/ai-chat',
-      live: 'https://ai-chat-demo.com',
-      features: ['Natural language processing', 'Real-time responses', 'Multi-language support', 'Analytics dashboard'],
-      stats: { stars: 78, forks: 23 }
+      features: ['Natural language processing', 'Real-time responses', 'Multi-language support', 'Analytics dashboard']
     },
     {
       title: 'Task Management App',
       description: 'A collaborative project management tool with real-time updates, team collaboration, and progress tracking.',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=250&fit=crop',
       technologies: ['Vue.js', 'Firebase', 'Vuex', 'Tailwind CSS', 'Socket.io'],
       github: 'https://github.com/adityarao/task-manager',
-      live: 'https://task-manager-demo.com',
-      features: ['Real-time collaboration', 'Task assignments', 'Progress tracking', 'File sharing'],
-      stats: { stars: 32, forks: 8 }
+      features: ['Real-time collaboration', 'Task assignments', 'Progress tracking', 'File sharing']
     },
     {
       title: 'Weather Dashboard',
       description: 'A beautiful weather application with location-based forecasts, interactive maps, and detailed analytics.',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=400&h=250&fit=crop',
       technologies: ['React', 'TypeScript', 'OpenWeather API', 'Chart.js', 'PWA'],
       github: 'https://github.com/adityarao/weather-app',
-      live: 'https://weather-dashboard.com',
-      features: ['Location-based forecasts', 'Interactive maps', 'Weather analytics', 'PWA support'],
-      stats: { stars: 56, forks: 15 }
+      features: ['Location-based forecasts', 'Interactive maps', 'Weather analytics', 'PWA support']
     },
     {
       title: 'Fitness Tracker',
       description: 'A comprehensive fitness tracking application with workout planning, progress monitoring, and social features.',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=250&fit=crop',
       technologies: ['React Native', 'Node.js', 'MongoDB', 'JWT', 'Push notifications'],
       github: 'https://github.com/adityarao/fitness-tracker',
-      live: 'https://fitness-tracker-app.com',
-      features: ['Workout planning', 'Progress tracking', 'Social features', 'Push notifications'],
-      stats: { stars: 89, forks: 34 }
+      features: ['Workout planning', 'Progress tracking', 'Social features', 'Push notifications']
     },
     {
       title: 'Portfolio Website',
       description: 'A modern, responsive portfolio website built with Next.js and Tailwind CSS, featuring smooth animations.',
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=250&fit=crop',
       technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vercel'],
       github: 'https://github.com/adityarao/portfolio',
-      live: 'https://adityarao.dev',
-      features: ['Responsive design', 'Smooth animations', 'SEO optimized', 'Fast performance'],
-      stats: { stars: 23, forks: 5 }
+      features: ['Responsive design', 'Smooth animations', 'SEO optimized', 'Fast performance']
     }
   ]
 
@@ -96,31 +84,27 @@ const Projects = () => {
               viewport={{ once: true }}
               className="group"
             >
-              <motion.div
-                whileHover={{ y: -10 }}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300"
-              >
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-200 hover:-translate-y-1">
                 {/* Project Image */}
                 <div className="relative h-48 bg-gradient-to-br from-primary-100 to-primary-200 overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-br from-primary-400/20 to-purple-400/20"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Code size={64} className="text-primary-600/30" />
-                  </div>
-                  <div className="absolute top-4 right-4 flex space-x-2">
-                    <motion.button
+                  <div className="absolute top-4 right-4">
+                    <motion.a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
-                      className="p-2 bg-white/90 rounded-lg text-gray-600 hover:text-primary-600 transition-colors duration-200"
+                      className="p-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg shadow-lg transition-all duration-200 flex items-center gap-2"
                     >
                       <Github size={16} />
-                    </motion.button>
-                    <motion.button
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="p-2 bg-white/90 rounded-lg text-gray-600 hover:text-primary-600 transition-colors duration-200"
-                    >
-                      <ExternalLink size={16} />
-                    </motion.button>
+                      <span className="text-sm font-medium">Code</span>
+                    </motion.a>
                   </div>
                 </div>
 
@@ -148,7 +132,7 @@ const Projects = () => {
                   </div>
 
                   {/* Technologies */}
-                  <div className="mb-4">
+                  <div>
                     <div className="flex flex-wrap gap-1">
                       {project.technologies.slice(0, 4).map((tech, idx) => (
                         <span
@@ -165,49 +149,11 @@ const Projects = () => {
                       )}
                     </div>
                   </div>
-
-                  {/* Stats */}
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                    <div className="flex items-center space-x-4 text-sm text-gray-500">
-                      <div className="flex items-center space-x-1">
-                        <Star size={14} />
-                        <span>{project.stats.stars}</span>
-                      </div>
-                      <div className="flex items-center space-x-1">
-                        <Users size={14} />
-                        <span>{project.stats.forks}</span>
-                      </div>
-                    </div>
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="text-primary-600 hover:text-primary-700 font-medium text-sm transition-colors duration-200"
-                    >
-                      View Details →
-                    </motion.button>
-                  </div>
                 </div>
-              </motion.div>
+              </div>
             </motion.div>
           ))}
         </div>
-
-        {/* Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200"
-          >
-            View All Projects
-          </motion.button>
-        </motion.div>
       </div>
     </section>
   )

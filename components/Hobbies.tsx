@@ -13,7 +13,7 @@ const Hobbies = () => {
       color: 'from-blue-500 to-cyan-500',
       bgColor: 'bg-blue-100',
       textColor: 'text-blue-700',
-      image: '/api/placeholder/300/200',
+      image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=300&h=200&fit=crop',
       details: ['Landscape photography', 'Street photography', 'Portrait sessions', 'Photo editing']
     },
     {
@@ -23,7 +23,7 @@ const Hobbies = () => {
       color: 'from-purple-500 to-pink-500',
       bgColor: 'bg-purple-100',
       textColor: 'text-purple-700',
-      image: '/api/placeholder/300/200',
+      image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=200&fit=crop',
       details: ['Guitar playing', 'Piano', 'Music production', 'Concert attendance']
     },
     {
@@ -33,7 +33,7 @@ const Hobbies = () => {
       color: 'from-green-500 to-emerald-500',
       bgColor: 'bg-green-100',
       textColor: 'text-green-700',
-      image: '/api/placeholder/300/200',
+      image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=300&h=200&fit=crop',
       details: ['Science fiction', 'Tech books', 'Philosophy', 'Biographies']
     },
     {
@@ -43,7 +43,7 @@ const Hobbies = () => {
       color: 'from-orange-500 to-red-500',
       bgColor: 'bg-orange-100',
       textColor: 'text-orange-700',
-      image: '/api/placeholder/300/200',
+      image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=300&h=200&fit=crop',
       details: ['International cuisine', 'Baking', 'Grilling', 'Recipe development']
     },
     {
@@ -53,7 +53,7 @@ const Hobbies = () => {
       color: 'from-indigo-500 to-blue-500',
       bgColor: 'bg-indigo-100',
       textColor: 'text-indigo-700',
-      image: '/api/placeholder/300/200',
+      image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=300&h=200&fit=crop',
       details: ['Cultural exploration', 'Adventure travel', 'Local experiences', 'Photography']
     },
     {
@@ -63,7 +63,7 @@ const Hobbies = () => {
       color: 'from-pink-500 to-purple-500',
       bgColor: 'bg-pink-100',
       textColor: 'text-pink-700',
-      image: '/api/placeholder/300/200',
+      image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=300&h=200&fit=crop',
       details: ['Strategy games', 'RPGs', 'Indie games', 'Gaming communities']
     },
     {
@@ -73,7 +73,7 @@ const Hobbies = () => {
       color: 'from-red-500 to-pink-500',
       bgColor: 'bg-red-100',
       textColor: 'text-red-700',
-      image: '/api/placeholder/300/200',
+      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop',
       details: ['Weight training', 'Cardio', 'Yoga', 'Outdoor activities']
     },
     {
@@ -83,7 +83,7 @@ const Hobbies = () => {
       color: 'from-emerald-500 to-green-500',
       bgColor: 'bg-emerald-100',
       textColor: 'text-emerald-700',
-      image: '/api/placeholder/300/200',
+      image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=300&h=200&fit=crop',
       details: ['Mountain trails', 'Nature photography', 'Camping', 'Outdoor gear']
     }
   ]
@@ -116,12 +116,14 @@ const Hobbies = () => {
               viewport={{ once: true }}
               className="group"
             >
-              <motion.div
-                whileHover={{ y: -8, scale: 1.02 }}
-                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-full"
-              >
+              <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-200 h-full hover:-translate-y-1">
                 {/* Image Placeholder */}
-                <div className="relative h-32 bg-gradient-to-br from-gray-100 to-gray-200">
+                <div className="relative h-32 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
+                  <img 
+                    src={hobby.image} 
+                    alt={hobby.title}
+                    className="w-full h-full object-cover"
+                  />
                   <div className={`absolute inset-0 bg-gradient-to-br ${hobby.color} opacity-20`}></div>
                   <div className="absolute inset-0 flex items-center justify-center">
                     <hobby.icon size={48} className={`${hobby.textColor} opacity-60`} />
@@ -149,62 +151,12 @@ const Hobbies = () => {
                   </div>
 
                   {/* Decorative Element */}
-                  <div className={`w-8 h-1 rounded-full bg-gradient-to-r ${hobby.color} mt-4 group-hover:w-12 transition-all duration-300`}></div>
+                  <div className={`w-8 h-1 rounded-full bg-gradient-to-r ${hobby.color} mt-4 group-hover:w-12 transition-all duration-200`}></div>
                 </div>
-              </motion.div>
+              </div>
             </motion.div>
           ))}
         </div>
-
-        {/* Personal Story */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-16 bg-gradient-to-br from-primary-50 to-purple-50 rounded-2xl p-8"
-        >
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Finding Balance Through Hobbies
-              </h3>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                My hobbies help me maintain a healthy work-life balance and provide creative outlets 
-                that complement my professional work. They keep me inspired and bring fresh perspectives 
-                to problem-solving.
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                Whether it's capturing a perfect moment through photography, exploring new cultures 
-                through travel, or challenging myself with new recipes, these activities enrich my life 
-                and make me a more well-rounded individual.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-2 gap-4">
-              <div className="text-center p-4 bg-white/80 rounded-lg backdrop-blur-sm">
-                <div className="text-2xl mb-2">📸</div>
-                <div className="text-sm font-medium text-gray-700">Photography</div>
-                <div className="text-xs text-gray-500">5+ years</div>
-              </div>
-              <div className="text-center p-4 bg-white/80 rounded-lg backdrop-blur-sm">
-                <div className="text-2xl mb-2">🎸</div>
-                <div className="text-sm font-medium text-gray-700">Music</div>
-                <div className="text-xs text-gray-500">8+ years</div>
-              </div>
-              <div className="text-center p-4 bg-white/80 rounded-lg backdrop-blur-sm">
-                <div className="text-2xl mb-2">🌍</div>
-                <div className="text-sm font-medium text-gray-700">Travel</div>
-                <div className="text-xs text-gray-500">15+ countries</div>
-              </div>
-              <div className="text-center p-4 bg-white/80 rounded-lg backdrop-blur-sm">
-                <div className="text-2xl mb-2">🏔️</div>
-                <div className="text-sm font-medium text-gray-700">Hiking</div>
-                <div className="text-xs text-gray-500">50+ trails</div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

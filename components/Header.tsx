@@ -21,7 +21,6 @@ const Header = () => {
     { name: 'About', href: '#about' },
     { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Interests', href: '#interests' },
     { name: 'Hobbies', href: '#hobbies' },
     { name: 'Contact', href: '#contact' },
   ]
@@ -75,7 +74,7 @@ const Header = () => {
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={24} className="text-gray-700" /> : <Menu size={24} className="text-gray-700" />}
           </motion.button>
         </div>
 
