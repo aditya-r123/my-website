@@ -114,44 +114,84 @@ const Hobbies = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.8 }}
               viewport={{ once: true }}
-              className="group"
+              whileHover={{ 
+                y: -8,
+                scale: 1.03,
+                transition: { duration: 0.3, ease: "easeOut" }
+              }}
+              className="group cursor-pointer"
             >
-              <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-200 h-full hover:-translate-y-1">
+              <div className="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 ease-out hover:shadow-2xl hover:shadow-primary-500/20 border border-gray-100 hover:border-primary-200 h-full">
                 {/* Image Placeholder */}
                 <div className="relative h-32 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
-                  <img 
+                  <motion.img 
                     src={hobby.image} 
                     alt={hobby.title}
                     className="w-full h-full object-cover"
+                    whileHover={{ 
+                      scale: 1.1,
+                      transition: { duration: 0.3, ease: "easeOut" }
+                    }}
                   />
-                  <div className={`absolute inset-0 bg-gradient-to-br ${hobby.color} opacity-20`}></div>
+                  <div className={`absolute inset-0 bg-gradient-to-br ${hobby.color} opacity-20 group-hover:opacity-30 transition-all duration-300`}></div>
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <hobby.icon size={48} className={`${hobby.textColor} opacity-60`} />
+                    <motion.div
+                      whileHover={{ 
+                        scale: 1.2,
+                        rotate: 10,
+                        transition: { duration: 0.3 }
+                      }}
+                    >
+                      <hobby.icon size={48} className={`${hobby.textColor} opacity-60 group-hover:opacity-80 transition-all duration-300`} />
+                    </motion.div>
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="p-6">
-                  <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors duration-200">
+                  <motion.h3 
+                    className="text-lg font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors duration-300"
+                    whileHover={{ x: 5 }}
+                  >
                     {hobby.title}
-                  </h3>
+                  </motion.h3>
                   
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4 group-hover:text-gray-700 transition-colors duration-300">
                     {hobby.description}
                   </p>
 
                   {/* Details */}
                   <div className="space-y-1">
                     {hobby.details.map((detail, idx) => (
-                      <div key={idx} className="flex items-center space-x-2 text-xs text-gray-500">
-                        <span className={`w-1 h-1 rounded-full ${hobby.bgColor}`}></span>
+                      <motion.div 
+                        key={idx} 
+                        className="flex items-center space-x-2 text-xs text-gray-500 group-hover:text-gray-600 transition-colors duration-300"
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: idx * 0.1 }}
+                        viewport={{ once: true }}
+                      >
+                        <motion.span 
+                          className={`w-1 h-1 rounded-full ${hobby.bgColor} group-hover:scale-150 transition-all duration-300`}
+                          whileHover={{ 
+                            scale: 2,
+                            backgroundColor: hobby.textColor.replace('text-', 'bg-'),
+                            transition: { duration: 0.2 }
+                          }}
+                        ></motion.span>
                         <span>{detail}</span>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
 
                   {/* Decorative Element */}
-                  <div className={`w-8 h-1 rounded-full bg-gradient-to-r ${hobby.color} mt-4 group-hover:w-12 transition-all duration-200`}></div>
+                  <motion.div 
+                    className={`w-8 h-1 rounded-full bg-gradient-to-r ${hobby.color} mt-4 group-hover:w-12 transition-all duration-300`}
+                    whileHover={{ 
+                      width: '100%',
+                      transition: { duration: 0.3 }
+                    }}
+                  ></motion.div>
                 </div>
               </div>
             </motion.div>

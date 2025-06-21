@@ -82,25 +82,38 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.8 }}
               viewport={{ once: true }}
-              className="group"
+              whileHover={{ 
+                y: -8,
+                scale: 1.02,
+                transition: { duration: 0.3, ease: "easeOut" }
+              }}
+              className="group cursor-pointer"
             >
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-200 hover:-translate-y-1">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 ease-out hover:shadow-2xl hover:shadow-primary-500/20 border border-gray-100 hover:border-primary-200">
                 {/* Project Image */}
                 <div className="relative h-48 bg-gradient-to-br from-primary-100 to-primary-200 overflow-hidden">
-                  <img 
+                  <motion.img 
                     src={project.image} 
                     alt={project.title}
                     className="w-full h-full object-cover"
+                    whileHover={{ 
+                      scale: 1.05,
+                      transition: { duration: 0.3, ease: "easeOut" }
+                    }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary-400/20 to-purple-400/20"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary-400/20 to-purple-400/20 group-hover:from-primary-400/30 group-hover:to-purple-400/30 transition-all duration-300"></div>
                   <div className="absolute top-4 right-4">
                     <motion.a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
+                      whileHover={{ 
+                        scale: 1.1,
+                        rotate: 5,
+                        transition: { duration: 0.2 }
+                      }}
                       whileTap={{ scale: 0.9 }}
-                      className="p-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg shadow-lg transition-all duration-200 flex items-center gap-2"
+                      className="p-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg shadow-lg transition-all duration-200 flex items-center gap-2 group-hover:shadow-xl"
                     >
                       <Github size={16} />
                       <span className="text-sm font-medium">Code</span>
@@ -110,23 +123,39 @@ const Projects = () => {
 
                 {/* Project Content */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors duration-200">
+                  <motion.h3 
+                    className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors duration-300"
+                    whileHover={{ x: 5 }}
+                  >
                     {project.title}
-                  </h3>
+                  </motion.h3>
                   
-                  <p className="text-gray-600 mb-4 leading-relaxed">
+                  <p className="text-gray-600 mb-4 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                     {project.description}
                   </p>
 
                   {/* Features */}
                   <div className="mb-4">
-                    <h4 className="font-semibold text-gray-900 mb-2 text-sm">Key Features:</h4>
+                    <h4 className="font-semibold text-gray-900 mb-2 text-sm group-hover:text-primary-600 transition-colors duration-300">Key Features:</h4>
                     <ul className="space-y-1">
                       {project.features.slice(0, 3).map((feature, idx) => (
-                        <li key={idx} className="flex items-center space-x-2 text-xs text-gray-600">
-                          <span className="text-primary-600">•</span>
+                        <motion.li 
+                          key={idx} 
+                          className="flex items-center space-x-2 text-xs text-gray-600 group-hover:text-gray-700 transition-colors duration-300"
+                          initial={{ opacity: 0, x: -10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ delay: idx * 0.1 }}
+                          viewport={{ once: true }}
+                        >
+                          <motion.span 
+                            className="text-primary-600"
+                            whileHover={{ scale: 1.2, rotate: 180 }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            •
+                          </motion.span>
                           <span>{feature}</span>
-                        </li>
+                        </motion.li>
                       ))}
                     </ul>
                   </div>
@@ -135,17 +164,25 @@ const Projects = () => {
                   <div>
                     <div className="flex flex-wrap gap-1">
                       {project.technologies.slice(0, 4).map((tech, idx) => (
-                        <span
+                        <motion.span
                           key={idx}
-                          className="px-2 py-1 bg-primary-100 text-primary-700 rounded-md text-xs font-medium"
+                          className="px-2 py-1 bg-primary-100 text-primary-700 rounded-md text-xs font-medium hover:bg-primary-200 transition-colors duration-200"
+                          whileHover={{ 
+                            scale: 1.05,
+                            y: -2,
+                            transition: { duration: 0.2 }
+                          }}
                         >
                           {tech}
-                        </span>
+                        </motion.span>
                       ))}
                       {project.technologies.length > 4 && (
-                        <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded-md text-xs font-medium">
+                        <motion.span 
+                          className="px-2 py-1 bg-gray-100 text-gray-600 rounded-md text-xs font-medium hover:bg-gray-200 transition-colors duration-200"
+                          whileHover={{ scale: 1.05 }}
+                        >
                           +{project.technologies.length - 4}
-                        </span>
+                        </motion.span>
                       )}
                     </div>
                   </div>
