@@ -101,8 +101,7 @@ const Interests = () => {
               className="group"
             >
               <motion.div
-                whileHover={{ y: -8, scale: 1.02 }}
-                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 h-full"
+                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl hover:shadow-primary-500/30 transition-all duration-300 h-full"
               >
                 {/* Icon */}
                 <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${interest.color} p-3 mb-4 group-hover:scale-110 transition-transform duration-300`}>

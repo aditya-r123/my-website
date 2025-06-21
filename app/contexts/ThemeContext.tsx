@@ -21,9 +21,11 @@ export const useTheme = () => {
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>('light')
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    // Check for saved theme preference or default to light mode
+    setMounted(true)
+    // Check for saved theme preference or default to system preference
     const savedTheme = localStorage.getItem('theme') as Theme
     if (savedTheme) {
       setTheme(savedTheme)
@@ -33,6 +35,8 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   }, [])
 
   useEffect(() => {
+    if (!mounted) return
+    
     // Update document class when theme changes
     if (theme === 'dark') {
       document.documentElement.classList.add('dark')
@@ -40,10 +44,15 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       document.documentElement.classList.remove('dark')
     }
     localStorage.setItem('theme', theme)
-  }, [theme])
+  }, [theme, mounted])
 
   const toggleTheme = () => {
     setTheme(prev => prev === 'light' ? 'dark' : 'light')
+  }
+
+  // Prevent hydration mismatch
+  if (!mounted) {
+    return <>{children}</>
   }
 
   return (

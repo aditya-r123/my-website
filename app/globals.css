@@ -11,24 +11,228 @@
   
   body {
     font-family: 'Inter', system-ui, sans-serif;
+    background-color: #0a0f1c; /* Dark blue background */
+    color: #e2e8f0;
+  }
+
+  /* Ensure all sections have consistent backgrounds */
+  section {
+    background-color: #0a0f1c; /* Dark blue */
   }
 }
 
 @layer components {
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent;
   }
   
-  .card-hover {
-    @apply transition-all duration-200 hover:shadow-xl hover:-translate-y-1;
+  .gradient-text-purple {
+    @apply bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent;
   }
   
-  .section-padding {
-    @apply py-16 px-4 sm:px-6 lg:px-8;
+  .gradient-text-green {
+    @apply bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent;
   }
-  
+
+  .gradient-text-cyan {
+    @apply bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent;
+  }
+
+  .gradient-text-orange {
+    @apply bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent;
+  }
+
+  .gemini-gradient {
+    @apply bg-gradient-to-r from-blue-500 to-indigo-500;
+  }
+
+  .gemini-gradient-reverse {
+    @apply bg-gradient-to-r from-indigo-500 to-blue-500;
+  }
+
+  .gemini-gradient-vertical {
+    @apply bg-gradient-to-b from-blue-500 to-indigo-500;
+  }
+
+  /* Background gradient circles with subtle shift */
+  .bg-gradient-circle {
+    @apply absolute rounded-full mix-blend-multiply filter blur-3xl;
+    animation: gradient-shift 20s ease-in-out infinite;
+  }
+
   .container-max {
-    @apply max-w-7xl mx-auto;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-20 sm:py-24 lg:py-32;
+  }
+
+  /* Improved text contrast for better readability */
+  .text-primary {
+    @apply text-white;
+  }
+
+  .text-secondary {
+    @apply text-slate-200;
+  }
+
+  .text-muted {
+    @apply text-slate-400;
+  }
+
+  .bg-primary {
+    @apply bg-slate-900;
+  }
+
+  .bg-secondary {
+    @apply bg-slate-800;
+  }
+
+  .bg-tertiary {
+    @apply bg-slate-700;
+  }
+
+  .border-primary {
+    @apply border-slate-700;
+  }
+
+  .border-secondary {
+    @apply border-slate-600;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-2xl hover:shadow-primary-500/20;
+  }
+  
+  /* Halo effect for cards */
+  .halo-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10;
+  }
+
+  /* Halo hover effects */
+  .hover-halo-primary {
+    @apply hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300;
+  }
+
+  .hover-halo-purple {
+    @apply hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300;
+  }
+
+  .hover-halo-blue {
+    @apply hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300;
+  }
+
+  .hover-halo-green {
+    @apply hover:shadow-lg hover:shadow-green-500/20 transition-all duration-300;
+  }
+
+  .hover-halo-orange {
+    @apply hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-300;
+  }
+
+  .hover-halo-pink {
+    @apply hover:shadow-lg hover:shadow-pink-500/20 transition-all duration-300;
+  }
+
+  .hover-halo-indigo {
+    @apply hover:shadow-lg hover:shadow-indigo-500/20 transition-all duration-300;
+  }
+
+  .hover-halo-red {
+    @apply hover:shadow-lg hover:shadow-red-500/20 transition-all duration-300;
+  }
+
+  .hover-halo-emerald {
+    @apply hover:shadow-lg hover:shadow-emerald-500/20 transition-all duration-300;
+  }
+
+  /* Soft glow animation */
+  .soft-glow {
+    @apply relative;
+  }
+
+  .soft-glow::before {
+    content: '';
+    @apply absolute inset-0 rounded-lg opacity-0 transition-opacity duration-500;
+    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    animation: soft-glow-pulse 4s ease-in-out infinite;
+  }
+
+  /* Gentle pulse on hover */
+  .hover-pulse {
+    @apply transition-all duration-300;
+  }
+
+  .hover-pulse:hover {
+    animation: gentle-pulse 2s ease-in-out infinite;
+  }
+
+  /* Enhanced depth with layered shadows */
+  .depth-layer {
+    @apply relative;
+  }
+
+  .depth-layer::after {
+    content: '';
+    @apply absolute inset-0 rounded-lg opacity-0 transition-opacity duration-300;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(99, 102, 241, 0.05) 100%);
+    filter: blur(20px);
+  }
+
+  .depth-layer:hover::after {
+    @apply opacity-100;
+  }
+}
+
+@layer utilities {
+  /* Subtle gradient shift animation */
+  @keyframes gradient-shift {
+    0%, 100% {
+      opacity: 0.05;
+      transform: scale(1) rotate(0deg);
+    }
+    25% {
+      opacity: 0.07;
+      transform: scale(1.02) rotate(1deg);
+    }
+    50% {
+      opacity: 0.06;
+      transform: scale(1.01) rotate(-1deg);
+    }
+    75% {
+      opacity: 0.08;
+      transform: scale(1.03) rotate(0.5deg);
+    }
+  }
+
+  /* Soft glow pulse animation */
+  @keyframes soft-glow-pulse {
+    0%, 100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  /* Gentle pulse on hover */
+  @keyframes gentle-pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.02);
+    }
+  }
+
+  /* Hover effects */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+
+  .hover-glow {
+    @apply transition-shadow duration-300 hover:shadow-lg hover:shadow-blue-500/20;
   }
 }
 
@@ -38,14 +242,101 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-100 dark:bg-gray-800;
+  background: #1e293b;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gray-300 dark:bg-gray-600;
+  background: #475569;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-gray-400 dark:bg-gray-500;
+  background: #64748b;
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Dark mode specific overrides */
+.bg-gray-50 {
+  background-color: #1e293b;
+}
+
+.bg-gray-100 {
+  background-color: #334155;
+}
+
+.bg-white {
+  background-color: #1e293b;
+}
+
+.text-gray-900 {
+  color: #f1f5f9;
+}
+
+.text-gray-700 {
+  color: #cbd5e1;
+}
+
+.text-gray-600 {
+  color: #94a3b8;
+}
+
+.text-gray-500 {
+  color: #64748b;
+}
+
+.border-gray-200 {
+  border-color: #334155;
+}
+
+.border-gray-300 {
+  border-color: #475569;
+}
+
+.bg-gray-900 {
+  background-color: #0f172a;
+}
+
+.bg-gray-800 {
+  background-color: #1e293b;
+}
+
+.bg-gray-700 {
+  background-color: #334155;
+}
+
+.bg-gray-600 {
+  background-color: #475569;
+}
+
+.text-gray-100 {
+  color: #f8fafc;
+}
+
+.text-gray-200 {
+  color: #e2e8f0;
+}
+
+.text-gray-300 {
+  color: #cbd5e1;
+}
+
+.text-gray-400 {
+  color: #94a3b8;
+}
+
+/* Background overrides for dark mode */
+.bg-slate-50 {
+  background-color: #0f172a;
+}
+
+.bg-slate-100 {
+  background-color: #1e293b;
+}
+
+.bg-slate-800 {
+  background-color: #1e293b;
 } 
