@@ -48,7 +48,7 @@ const Contact = () => {
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Cupertino, CA',
+      value: 'San Francisco Bay Area, CA',
       href: '#'
     }
   ]

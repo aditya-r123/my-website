@@ -41,7 +41,7 @@ const Footer = () => {
           >
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <div className="space-y-2 text-slate-300">
-              <p>Cupertino, CA</p>
+              <p>San Francisco Bay Area, CA</p>
               <p>adityasr2018@gmail.com</p>
               <p>+1 (408) 823-7424</p>
             </div>
