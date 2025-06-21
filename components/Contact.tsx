@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Send, Linkedin, Github, Twitter, Globe } from 'lucide-react'
+import { Mail, Phone, MapPin, Send, Linkedin, Github, Twitter, Globe, Instagram } from 'lucide-react'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -57,26 +57,38 @@ const Contact = () => {
     {
       name: 'LinkedIn',
       icon: Linkedin,
-      href: 'https://linkedin.com/in/adityarao',
-      color: 'hover:text-blue-600'
+      href: 'https://linkedin.com/in/-adityarao',
+      color: 'text-blue-600 hover:text-blue-500'
     },
     {
       name: 'GitHub',
       icon: Github,
-      href: 'https://github.com/adityarao',
-      color: 'hover:text-slate-200'
+      href: 'https://github.com/aditya-r123',
+      color: 'text-gray-400 hover:text-gray-300'
     },
     {
       name: 'Twitter',
       icon: Twitter,
       href: 'https://twitter.com/adityarao',
-      color: 'hover:text-blue-400'
+      color: 'text-blue-400 hover:text-blue-300'
+    },
+    {
+      name: 'Instagram',
+      icon: Instagram,
+      href: 'https://instagram.com/adi.rao.os',
+      color: 'text-pink-500 hover:text-pink-400'
+    },
+    {
+      name: 'Email',
+      icon: Mail,
+      href: 'mailto:adityasr2018@gmail.com',
+      color: 'text-blue-500 hover:text-blue-400'
     },
     {
       name: 'Website',
       icon: Globe,
       href: 'https://adityarao.dev',
-      color: 'hover:text-blue-600'
+      color: 'text-green-500 hover:text-green-400'
     }
   ]
 
@@ -233,30 +245,13 @@ const Contact = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ delay: index * 0.1, duration: 0.3 }}
                     viewport={{ once: true }}
-                    className={`w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center shadow-sm hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 ${social.color} border border-slate-700`}
+                    className={`w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center shadow-sm hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 border border-slate-700`}
                   >
-                    <social.icon size={24} className="text-slate-400" />
+                    <social.icon size={24} className={social.color} />
                   </motion.a>
                 ))}
               </div>
             </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-              viewport={{ once: true }}
-              className="bg-slate-800 rounded-lg p-6 border border-slate-700"
-            >
-              <div className="flex items-center space-x-3 mb-3">
-                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                <h4 className="text-lg font-semibold text-white">Available for Opportunities</h4>
-              </div>
-              <p className="text-slate-200 text-sm">
-                I'm currently open to new opportunities, collaborations, and interesting projects. 
-                Let's discuss how we can work together!
-              </p>
-            </motion.div>
           </motion.div>
         </div>
       </div>

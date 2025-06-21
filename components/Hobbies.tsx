@@ -99,7 +99,7 @@ const Hobbies = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-white mb-4">
-            Personal <span className="gradient-text">Hobbies</span>
+            <span className="gradient-text">Hobbies</span> & Interests
           </h2>
           <p className="text-xl text-slate-200 max-w-3xl mx-auto">
             Activities that bring joy, balance, and inspiration to my life outside of work.
