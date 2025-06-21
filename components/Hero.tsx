@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { ChevronDown, Download, ArrowRight, Github, Linkedin, Mail, Zap, Settings } from 'lucide-react'
+import { ChevronDown, Download, ArrowRight, Github, Linkedin, Mail } from 'lucide-react'
 
 const Hero = () => {
   const scrollToAbout = () => {
@@ -22,9 +22,9 @@ const Hero = () => {
   }
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 to-white">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5 dark:opacity-10">
         <div className="absolute inset-0 bg-gradient-to-r from-primary-400 to-purple-400 transform rotate-12 scale-150"></div>
       </div>
 
@@ -43,7 +43,7 @@ const Hero = () => {
               transition={{ delay: 0.2, duration: 0.8 }}
               className="mb-6"
             >
-              <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-4">
+              <span className="inline-block px-4 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium mb-4">
                 Software Engineer & Developer
               </span>
             </motion.div>
@@ -52,7 +52,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
+              className="text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight"
             >
               Hi, I'm{' '}
               <span className="gradient-text">Aditya Rao</span>
@@ -62,7 +62,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0"
+              className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0"
             >
               Passionate about creating innovative solutions and building scalable applications. 
               I love turning complex problems into simple, beautiful, and intuitive designs.
@@ -88,7 +88,7 @@ const Hero = () => {
                 href="#projects"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center gap-2"
+                className="border-2 border-primary-600 text-primary-600 dark:text-primary-400 hover:bg-primary-600 hover:text-white dark:hover:bg-primary-600 dark:hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center gap-2"
               >
                 View Projects
                 <ArrowRight size={20} />
@@ -107,7 +107,7 @@ const Hero = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
-                className="p-3 bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-600 rounded-lg transition-all duration-200"
+                className="p-3 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 rounded-lg transition-all duration-200"
               >
                 <Github size={20} />
               </motion.a>
@@ -117,7 +117,7 @@ const Hero = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
-                className="p-3 bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-600 rounded-lg transition-all duration-200"
+                className="p-3 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 rounded-lg transition-all duration-200"
               >
                 <Linkedin size={20} />
               </motion.a>
@@ -125,7 +125,7 @@ const Hero = () => {
               <motion.a
                 href="mailto:aditya@example.com"
                 whileHover={{ scale: 1.1, y: -2 }}
-                className="p-3 bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-600 rounded-lg transition-all duration-200"
+                className="p-3 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 rounded-lg transition-all duration-200"
               >
                 <Mail size={20} />
               </motion.a>
@@ -141,7 +141,7 @@ const Hero = () => {
           >
             <div className="relative">
               <div className="w-80 h-80 rounded-full bg-gradient-to-br from-primary-400 to-purple-500 p-1">
-                <div className="w-full h-full rounded-full bg-white p-2">
+                <div className="w-full h-full rounded-full bg-white dark:bg-gray-800 p-2">
                   <div className="w-full h-full rounded-full overflow-hidden">
                     <img 
                       src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" 
@@ -151,23 +151,6 @@ const Hero = () => {
                   </div>
                 </div>
               </div>
-              
-              {/* Floating Elements */}
-              <motion.div
-                animate={{ y: [-10, 10, -10] }}
-                transition={{ duration: 3, repeat: Infinity }}
-                className="absolute -top-4 -right-4 w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg"
-              >
-                <Zap size={24} className="text-white" />
-              </motion.div>
-              
-              <motion.div
-                animate={{ y: [10, -10, 10] }}
-                transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-                className="absolute -bottom-4 -left-4 w-16 h-16 bg-green-400 rounded-full flex items-center justify-center shadow-lg"
-              >
-                <Settings size={24} className="text-white" />
-              </motion.div>
             </div>
           </motion.div>
         </div>
@@ -183,7 +166,7 @@ const Hero = () => {
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
             onClick={scrollToAbout}
-            className="text-gray-400 hover:text-primary-600 transition-colors duration-200"
+            className="text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
           >
             <ChevronDown size={32} />
           </motion.button>

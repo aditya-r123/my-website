@@ -57,7 +57,7 @@ const Projects = () => {
   ]
 
   return (
-    <section id="projects" className="section-padding bg-white">
+    <section id="projects" className="section-padding bg-white dark:bg-gray-900">
       <div className="container-max">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -66,10 +66,10 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Featured <span className="gradient-text">Projects</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             A collection of my recent work showcasing various technologies and problem-solving approaches.
           </p>
         </motion.div>
@@ -89,9 +89,9 @@ const Projects = () => {
               }}
               className="group cursor-pointer"
             >
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 ease-out hover:shadow-2xl hover:shadow-primary-500/20 border border-gray-100 hover:border-primary-200">
+              <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-all duration-300 ease-out hover:shadow-2xl hover:shadow-primary-500/20 border border-gray-100 dark:border-gray-700 hover:border-primary-200 dark:hover:border-primary-600">
                 {/* Project Image */}
-                <div className="relative h-48 bg-gradient-to-br from-primary-100 to-primary-200 overflow-hidden">
+                <div className="relative h-48 bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900/30 dark:to-primary-800/30 overflow-hidden">
                   <motion.img 
                     src={project.image} 
                     alt={project.title}
@@ -124,31 +124,31 @@ const Projects = () => {
                 {/* Project Content */}
                 <div className="p-6">
                   <motion.h3 
-                    className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors duration-300"
+                    className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300"
                     whileHover={{ x: 5 }}
                   >
                     {project.title}
                   </motion.h3>
                   
-                  <p className="text-gray-600 mb-4 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                  <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300">
                     {project.description}
                   </p>
 
                   {/* Features */}
                   <div className="mb-4">
-                    <h4 className="font-semibold text-gray-900 mb-2 text-sm group-hover:text-primary-600 transition-colors duration-300">Key Features:</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">Key Features:</h4>
                     <ul className="space-y-1">
                       {project.features.slice(0, 3).map((feature, idx) => (
                         <motion.li 
                           key={idx} 
-                          className="flex items-center space-x-2 text-xs text-gray-600 group-hover:text-gray-700 transition-colors duration-300"
+                          className="flex items-center space-x-2 text-xs text-gray-600 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300"
                           initial={{ opacity: 0, x: -10 }}
                           whileInView={{ opacity: 1, x: 0 }}
                           transition={{ delay: idx * 0.1 }}
                           viewport={{ once: true }}
                         >
                           <motion.span 
-                            className="text-primary-600"
+                            className="text-primary-600 dark:text-primary-400"
                             whileHover={{ scale: 1.2, rotate: 180 }}
                             transition={{ duration: 0.3 }}
                           >
@@ -166,7 +166,7 @@ const Projects = () => {
                       {project.technologies.slice(0, 4).map((tech, idx) => (
                         <motion.span
                           key={idx}
-                          className="px-2 py-1 bg-primary-100 text-primary-700 rounded-md text-xs font-medium hover:bg-primary-200 transition-colors duration-200"
+                          className="px-2 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-md text-xs font-medium hover:bg-primary-200 dark:hover:bg-primary-800/50 transition-colors duration-200"
                           whileHover={{ 
                             scale: 1.05,
                             y: -2,
@@ -178,7 +178,7 @@ const Projects = () => {
                       ))}
                       {project.technologies.length > 4 && (
                         <motion.span 
-                          className="px-2 py-1 bg-gray-100 text-gray-600 rounded-md text-xs font-medium hover:bg-gray-200 transition-colors duration-200"
+                          className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-md text-xs font-medium hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200"
                           whileHover={{ scale: 1.05 }}
                         >
                           +{project.technologies.length - 4}

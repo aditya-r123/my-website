@@ -60,7 +60,7 @@ const Experience = () => {
   ]
 
   return (
-    <section id="experience" className="section-padding bg-gray-50">
+    <section id="experience" className="section-padding bg-gray-50 dark:bg-gray-800">
       <div className="container-max">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -69,10 +69,10 @@ const Experience = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Work <span className="gradient-text">Experience</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             My professional journey in software development and technology.
           </p>
         </motion.div>
@@ -94,20 +94,20 @@ const Experience = () => {
                 }`}
               >
                 {/* Timeline Dot */}
-                <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-primary-600 rounded-full border-4 border-white shadow-lg z-10"></div>
+                <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-primary-600 rounded-full border-4 border-white dark:border-gray-800 shadow-lg z-10"></div>
 
                 {/* Content Card */}
                 <div className={`ml-16 md:ml-0 md:w-5/12 ${index % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'}`}>
                   <motion.div
                     whileHover={{ scale: 1.02 }}
-                    className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300"
+                    className="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300"
                   >
                     {/* Header */}
                     <div className="mb-4">
-                      <h3 className="text-xl font-bold text-gray-900 mb-1">
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
                         {experience.title}
                       </h3>
-                      <div className="flex items-center space-x-4 text-sm text-gray-600 mb-2">
+                      <div className="flex items-center space-x-4 text-sm text-gray-600 dark:text-gray-400 mb-2">
                         <div className="flex items-center space-x-1">
                           <Briefcase size={16} />
                           <span>{experience.company}</span>
@@ -117,24 +117,24 @@ const Experience = () => {
                           <span>{experience.location}</span>
                         </div>
                       </div>
-                      <div className="flex items-center space-x-1 text-sm text-primary-600 font-medium">
+                      <div className="flex items-center space-x-1 text-sm text-primary-600 dark:text-primary-400 font-medium">
                         <Calendar size={16} />
                         <span>{experience.period}</span>
                       </div>
                     </div>
 
                     {/* Description */}
-                    <p className="text-gray-600 mb-4 leading-relaxed">
+                    <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                       {experience.description}
                     </p>
 
                     {/* Achievements */}
                     <div className="mb-4">
-                      <h4 className="font-semibold text-gray-900 mb-2">Key Achievements:</h4>
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Key Achievements:</h4>
                       <ul className="space-y-1">
                         {experience.achievements.map((achievement, idx) => (
-                          <li key={idx} className="flex items-start space-x-2 text-sm text-gray-600">
-                            <span className="text-primary-600 mt-1">•</span>
+                          <li key={idx} className="flex items-start space-x-2 text-sm text-gray-600 dark:text-gray-300">
+                            <span className="text-primary-600 dark:text-primary-400 mt-1">•</span>
                             <span>{achievement}</span>
                           </li>
                         ))}
@@ -143,12 +143,12 @@ const Experience = () => {
 
                     {/* Technologies */}
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Technologies:</h4>
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Technologies:</h4>
                       <div className="flex flex-wrap gap-2">
                         {experience.technologies.map((tech, idx) => (
                           <span
                             key={idx}
-                            className="px-2 py-1 bg-primary-100 text-primary-700 rounded-md text-xs font-medium"
+                            className="px-2 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-md text-xs font-medium"
                           >
                             {tech}
                           </span>

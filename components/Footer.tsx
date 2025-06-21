@@ -12,24 +12,24 @@ const Footer = () => {
       name: 'GitHub',
       icon: Github,
       href: 'https://github.com/adityarao',
-      color: 'hover:text-gray-800'
+      color: 'hover:text-gray-800 dark:hover:text-gray-200'
     },
     {
       name: 'LinkedIn',
       icon: Linkedin,
       href: 'https://linkedin.com/in/adityarao',
-      color: 'hover:text-blue-600'
+      color: 'hover:text-blue-600 dark:hover:text-blue-400'
     },
     {
       name: 'Email',
       icon: Mail,
       href: 'mailto:aditya.rao@email.com',
-      color: 'hover:text-primary-600'
+      color: 'hover:text-primary-600 dark:hover:text-primary-400'
     }
   ]
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gray-900 dark:bg-black text-white">
       <div className="container-max py-12">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Brand */}
@@ -40,7 +40,7 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold gradient-text mb-4">Aditya Rao</h3>
-            <p className="text-gray-300 mb-4 leading-relaxed">
+            <p className="text-gray-300 dark:text-gray-400 mb-4 leading-relaxed">
               A passionate software engineer dedicated to creating innovative solutions 
               and building meaningful applications that make a difference.
             </p>
@@ -52,7 +52,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
-                  className={`p-2 bg-gray-800 rounded-lg transition-all duration-200 ${social.color}`}
+                  className={`p-2 bg-gray-800 dark:bg-gray-900 rounded-lg transition-all duration-200 ${social.color}`}
                 >
                   <social.icon size={20} />
                 </motion.a>
@@ -73,7 +73,7 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={`#${item.toLowerCase()}`}
-                    className="text-gray-300 hover:text-white transition-colors duration-200"
+                    className="text-gray-300 dark:text-gray-400 hover:text-white dark:hover:text-gray-200 transition-colors duration-200"
                   >
                     {item}
                   </a>
@@ -90,7 +90,7 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
-            <div className="space-y-2 text-gray-300">
+            <div className="space-y-2 text-gray-300 dark:text-gray-400">
               <p>San Francisco, CA</p>
               <p>aditya.rao@email.com</p>
               <p>+1 (555) 123-4567</p>
@@ -104,9 +104,9 @@ const Footer = () => {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.8 }}
           viewport={{ once: true }}
-          className="border-t border-gray-800 mt-8 pt-8 text-center"
+          className="border-t border-gray-800 dark:border-gray-700 mt-8 pt-8 text-center"
         >
-          <p className="text-gray-400">
+          <p className="text-gray-400 dark:text-gray-500">
             © {currentYear} Aditya Rao. All rights reserved.
           </p>
         </motion.div>
